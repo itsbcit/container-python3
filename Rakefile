@@ -15,7 +15,7 @@ task :default do
   maintainer = 'jesse_weisner@bcit.ca'
   org_name = 'bcit'
   image_name = 'openshift-python3'
-  version = '3.6.8-r2'
+  version = '3.7.3-r0'
   version_segments = version.split('.')
   patch_segments = version_segments[2].split('-')
   tags = [
