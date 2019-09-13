@@ -1,0 +1,8 @@
+---
+image_name: openshift-python3
+labels:
+  maintainer: 'jesse_weisner@bcit.ca'
+  python_version: '3.7.3'
+  python_apk_release: '0'
+suffixes:
+  - '3.7'

@@ -1,17 +1,11 @@
 FROM bcit/alpine:3.10
-
-LABEL maintainer="<%= maintainer %>"
-LABEL version="<%= version %>"
-
-ENV VERSION "<%= version %>"
+<%= snippet('labels', binding) -%>
 
 RUN apk add --no-cache \
-    python3=<%= version %> \
+    python3=<%= image.labels['python_version'] %>-r<%= image.labels['python_apk_release'] %> \
     py3-pip
 
 RUN pip3 install --upgrade pip
 
 
-ENTRYPOINT ["/sbin/tini", "--", "/docker-entrypoint.sh"]
-
-CMD ["python3"]
+ENTRYPOINT ["/sbin/tini", "--", "/docker-entrypoint.sh", "python3"]
