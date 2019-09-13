@@ -7,5 +7,5 @@ RUN apk add --no-cache \
 
 RUN pip3 install --upgrade pip
 
-
+COPY smoketest.py /smoketest.py
 ENTRYPOINT ["/sbin/tini", "--", "/docker-entrypoint.sh", "python3"]
